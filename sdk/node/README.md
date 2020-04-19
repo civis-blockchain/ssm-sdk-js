@@ -79,3 +79,11 @@ Run a query to list the existing SSM users. Should be "bob" ans "sam" with the l
 bcc-cli.js query $ca__ADMIN peer0 bclocal sandbox ssm list user
 ```
 
+  * Running a REST server
+
+Run a REST server that can be accessed with the example web client application.
+
+```
+bcc-rest.js 8080 $ca__ADMIN peer0:bclocal sandbox ssm
+```
+
