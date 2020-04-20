@@ -1,4 +1,13 @@
-var JSE = new JSEncrypt({default_key_size: 2048});
+// Copyright Luc Yriarte <luc.yriarte@thingagora.org> 2018 
+// License: Apache-2.0
+
+if (typeof exports != "undefined") {
+	var CryptoJS = require("./crypto-js/crypto-js.js");
+	var JSEmod = require("./jsencrypt/jsencrypt.js");
+	var JSE = new JSEmod.JSEncrypt({default_key_size: 2048});
+}
+else
+	var JSE = new JSEncrypt({default_key_size: 2048});
 
 function ssmRegister(user, admin, adminKey) {
 	JSE.setPrivateKey(adminKey);
@@ -96,5 +105,17 @@ function flattenPublicKey(pub) {
 			res += str;
 	});
 	return res;
+}
+
+
+if (typeof exports != "undefined") {
+	exports.ssmRegister = ssmRegister;
+	exports.ssmCreate = ssmCreate;
+	exports.ssmStart = ssmStart;
+	exports.ssmGrant = ssmGrant;
+	exports.ssmLimit = ssmLimit;
+	exports.ssmPerform = ssmPerform;
+	exports.ssmQuery = ssmQuery;
+	exports.flattenPublicKey = flattenPublicKey;
 }
 
