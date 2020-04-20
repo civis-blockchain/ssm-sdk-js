@@ -3,6 +3,8 @@
 
 ## Getting started
 
+### Installing
+
   * Local SSM deployment
 
 This example uses a [SSM local deployment](https://github.com/civis-blockchain/blockchain-ssm/tree/master/deployment/local) from the blockchain-ssm sources,
@@ -21,8 +23,6 @@ and use it with our ssm local deployment configuration.
 ```
 cd ${SSM_DEPLOYMENT_LOCAL_HOME}
 npm install ${SSM_SDK_NODE_HOME}
-export PATH=$PWD/node_modules/blockchain-coop:$PATH
-source .env
 ```
 
   * Node.js SDK local configuration
@@ -62,8 +62,14 @@ cat << EOF > config.json
 EOF
 ```
 
+### Node.js command line
+
+
   * Testing js SDK access
 
+```
+export PATH=$PWD/node_modules/blockchain-coop:$PATH
+source .env
 ```
 
 Enroll the bclocal organization admin and check access
@@ -78,6 +84,48 @@ Run a query to list the existing SSM users. Should be "bob" ans "sam" with the l
 ```
 bcc-cli.js query $ca__ADMIN peer0 bclocal sandbox ssm list user
 ```
+
+  * bcc-cli.js reference
+
+```
+bcc-cli.js
+Usage:
+	bcc-cli.js <register|enroll|check|invoke|query> [args]* 
+```
+
+```
+bcc-cli.js register
+Usage:
+	bcc-cli.js register <user> <password> <org> <newuser> <newpass>
+```
+
+```
+bcc-cli.js enroll
+Usage:
+	bcc-cli.js enroll <user> <password> <org>
+```
+
+```
+bcc-cli.js check
+Usage:
+	bcc-cli.js check <user>
+```
+
+```
+bcc-cli.js invoke
+Usage:
+	bcc-cli.js invoke <user> <endorsers> <channel> <ccid> <fcn> [transaction args]*
+endorsers list format: peer0:org0,peer1:org0,peerx:orgx...
+```
+
+```
+bcc-cli.js query
+Usage:
+	bcc-cli.js query <user> <peer> <org> <channel> <ccid> <fcn> [query args]*
+```
+
+
+### Node.js REST server
 
   * Running a REST server
 
