@@ -559,7 +559,7 @@ list admins
 <div class="mdl-grid">
 
 <!-- ---- ---- ---- ---- Session query / action box -->
-<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-grid">
+<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-grid">
 
 <!-- Session query / start buttons -->
 <div class="mdl-cell mdl-cell--4-col">
@@ -630,56 +630,7 @@ limit
 </div>
 <!-- ---- ---- ---- ------>
 
-<!-- ---- ---- ---- ---- Session list / log box -->
-<div class="mdl-cell mdl-cell--4-col mdl-grid">
 
-<!-- Session list button / box -->
-<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
-<button type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick="ssmListSetup('session',listSession)">
-list sessions
-</button>
-</div>
-
-<div class="mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-layout-spacer">
-</div>
-
-<div style="overflow:auto;max-height:240px;" class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone"  ng-controller="sessionTableCtrl">
-<!--
-<div style="width:95%" class="mdl-textfield mdl-js-textfield mdl-color--primary mdl-color-text--primary-contrast" id="session_list__TxtTbl">
-<textarea class="mdl-textfield__input" style="font-family:monospace"  rows="12" cols="32" id="session_list__Tbl"></textarea>
--->
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width">
-<thead>
-<tr class="mdl-color--primary">
-	<th class="mdl-data-table__cell--non-numeric mdl-color-text--primary-contrast">Session</th>
-</tr>
-</thead>
-<tbody id="session_list__Tbl">
-<tr ng-repeat="sessionItem in sessionList">
-	<td class="mdl-data-table__cell--non-numeric" ng-click="sessionQuery(sessionItem)">{{sessionItem}}</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-<!-- Session log button / box -->
-<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
-<button type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick="ssmLogSetup()">
-log session
-</button>
-</div>
-
-<div class="mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-layout-spacer">
-</div>
-
-<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
-<div style="width:95%" class="mdl-textfield mdl-js-textfield mdl-color--primary mdl-color-text--primary-contrast" id="session_log__TxtTbl">
-<textarea class="mdl-textfield__input" style="font-family:monospace"  rows="10" cols="32" id="session_log__Tbl"></textarea>
-</div>
-</div>
-
-</div>
 <!-- ---- ---- ---- ------>
 
 </div>
